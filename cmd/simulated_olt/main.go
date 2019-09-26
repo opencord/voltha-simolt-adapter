@@ -22,6 +22,7 @@ import (
 	"github.com/opencord/voltha-go/adapters"
 	com "github.com/opencord/voltha-go/adapters/common"
 	"github.com/opencord/voltha-go/common/log"
+	"github.com/opencord/voltha-go/common/version"
 	"github.com/opencord/voltha-go/db/kvstore"
 	"github.com/opencord/voltha-go/kafka"
 	ic "github.com/opencord/voltha-protos/go/inter_container"
@@ -232,7 +233,11 @@ func (a *adapter) setupRequestHandler(coreInstanceId string, iadapter adapters.I
 
 func (a *adapter) registerWithCore(retries int) error {
 	log.Info("registering-with-core")
-	adapterDescription := &voltha.Adapter{Id: "simulated_olt", Vendor: "simulation Enterprise Inc"}
+	adapterDescription := &voltha.Adapter{
+		Id:      "simulated_olt",
+		Vendor:  "Open Networking Foundation",
+		Version: version.VersionInfo.Version,
+	}
 	types := []*voltha.DeviceType{{Id: "simulated_olt", Adapter: "simulated_olt", AcceptsAddRemoveFlowUpdates: true}}
 	deviceTypes := &voltha.DeviceTypes{Items: types}
 	count := 0
