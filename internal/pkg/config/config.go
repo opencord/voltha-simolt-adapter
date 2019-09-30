@@ -39,6 +39,7 @@ const (
 	default_Topic            = "simulated_olt"
 	default_CoreTopic        = "rwcore"
 	default_OnuNumber        = 1
+	default_ProbePort        = 8080
 )
 
 // AdapterFlags represents the set of configurations used by the read-write adaptercore service
@@ -58,6 +59,7 @@ type AdapterFlags struct {
 	LogLevel         int
 	OnuNumber        int
 	Banner           bool
+	ProbePort        int
 }
 
 func init() {
@@ -81,6 +83,7 @@ func NewAdapterFlags() *AdapterFlags {
 		LogLevel:         default_LogLevel,
 		OnuNumber:        default_OnuNumber,
 		Banner:           default_Banner,
+		ProbePort:        default_ProbePort,
 	}
 	return &adapterFlags
 }
@@ -128,6 +131,9 @@ func (so *AdapterFlags) ParseCommandArguments() {
 
 	help = fmt.Sprintf("Show startup banner log lines")
 	flag.BoolVar(&so.Banner, "banner", default_Banner, help)
+
+	help = fmt.Sprintf("The port on which to listen to answer liveness and readiness probe queries over HTTP.")
+	flag.IntVar(&(so.ProbePort), "probe_port", default_ProbePort, help)
 
 	flag.Parse()
 
