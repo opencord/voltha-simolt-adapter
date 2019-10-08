@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d46dea3f_485797bc",
+        "filename": "go.mod",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000436
+      },
+      "writtenOn": "2019-10-08T18:16:30Z",
+      "side": 1,
+      "message": "this seems odd, why wouldnt it be just v2.1.3?\nor in this case, v2.2.x given this is :master?",
+      "range": {
+        "startLine": 21,
+        "startChar": 31,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "5d4d4ae105457f0ad9f4dab62ecc4c0db1bb8b54",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
