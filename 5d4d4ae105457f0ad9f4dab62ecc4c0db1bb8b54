@@ -22,6 +22,30 @@
       "revId": "5d4d4ae105457f0ad9f4dab62ecc4c0db1bb8b54",
       "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02765751_deea8f18",
+        "filename": "go.mod",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-10-08T21:12:41Z",
+      "side": 1,
+      "message": "The +incompatible is because voltha-go hasn\u0027t been migrated to `go mod` yet. Regarding version, I think you\u0027re right lets move to 2.2.0.",
+      "parentUuid": "d46dea3f_485797bc",
+      "range": {
+        "startLine": 21,
+        "startChar": 31,
+        "endLine": 21,
+        "endChar": 50
+      },
+      "revId": "5d4d4ae105457f0ad9f4dab62ecc4c0db1bb8b54",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
     }
   ]
 }
