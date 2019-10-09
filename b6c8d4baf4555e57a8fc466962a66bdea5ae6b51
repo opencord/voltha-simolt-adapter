@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f9d7f168_75aa5941",
+        "filename": "Makefile",
+        "patchSetId": 11
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-10-09T16:18:35Z",
+      "side": 1,
+      "message": "Good catch, will fix.",
+      "parentUuid": "f5b2c1ba_763d10f4",
+      "revId": "b6c8d4baf4555e57a8fc466962a66bdea5ae6b51",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29bfc6e7_3cab9e53",
         "filename": "Makefile",
         "patchSetId": 11
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "fc676c5e_68140a28",
+        "filename": "Makefile",
+        "patchSetId": 11
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-10-09T16:18:35Z",
+      "side": 1,
+      "message": "Will fix.",
+      "parentUuid": "29bfc6e7_3cab9e53",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 30
+      },
+      "revId": "b6c8d4baf4555e57a8fc466962a66bdea5ae6b51",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c152da1_5d32ccc0",
         "filename": "docker/Dockerfile.simulated_olt",
         "patchSetId": 11
@@ -53,6 +95,30 @@
       "writtenOn": "2019-10-09T16:03:37Z",
       "side": 1,
       "message": "GO11MODULE not set?",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 6
+      },
+      "revId": "b6c8d4baf4555e57a8fc466962a66bdea5ae6b51",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e053bdcc_ee9300fd",
+        "filename": "docker/Dockerfile.simulated_olt",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-10-09T16:18:35Z",
+      "side": 1,
+      "message": "GO111MODULE only needs to be set if the file is built from GOPATH, otherwise the `auto` setting is sufficient. As the dockerfile intentionally chooses a location outside the GOPATH, I chose not to set it here.",
+      "parentUuid": "1c152da1_5d32ccc0",
       "range": {
         "startLine": 48,
         "startChar": 4,
