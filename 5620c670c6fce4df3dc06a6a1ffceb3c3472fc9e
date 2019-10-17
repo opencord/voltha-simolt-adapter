@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9c1b6d1_aff85c8b",
+        "filename": "go.mod",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000016
+      },
+      "writtenOn": "2019-10-17T23:38:40Z",
+      "side": 1,
+      "message": "See comment in 15714 regarding dev vs release dependencies.",
+      "range": {
+        "startLine": 21,
+        "startChar": 1,
+        "endLine": 21,
+        "endChar": 80
+      },
+      "revId": "5620c670c6fce4df3dc06a6a1ffceb3c3472fc9e",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
