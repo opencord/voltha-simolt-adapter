@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9b2c986_8614fd39",
+        "filename": "Makefile",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-10-28T19:07:27Z",
+      "side": 1,
+      "message": "remove nested vendor? vendor/github.com/opencord/voltha-lib-go/v2/pkg/vendor",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 77
+      },
+      "revId": "5d38940b1e73dbab8eb317f2e909b12e7c49aa85",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
