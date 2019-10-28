@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2785423_998739f9",
+        "filename": "Makefile",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2019-10-28T18:12:50Z",
+      "side": 1,
+      "message": "please delete directory, before copying. also please delete any nested vendor directory under it as well.",
+      "range": {
+        "startLine": 94,
+        "startChar": 10,
+        "endLine": 94,
+        "endChar": 57
+      },
+      "revId": "7b93c00957896c37c7e87aad937bc8b5fb0a5613",
+      "serverId": "2a2bfe1b-c5c2-48ed-9ac8-16438ab24388",
+      "unresolved": false
+    }
+  ]
+}
