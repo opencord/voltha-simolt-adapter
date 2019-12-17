@@ -30,6 +30,7 @@ DOCKER_REGISTRY            ?=
 DOCKER_REPOSITORY          ?=
 DOCKER_TAG                 ?= ${VERSION}$(shell [[ ${DOCKER_LABEL_VCS_DIRTY} == "true" ]] && echo "-dirty" || true)
 SIMULATEDOLT_IMAGENAME     := ${DOCKER_REGISTRY}${DOCKER_REPOSITORY}voltha-adapter-simulated-olt
+TYPE                       ?= minimal
 
 ## Docker labels. Only set ref and commit date if committed
 DOCKER_LABEL_VCS_URL       ?= $(shell git remote get-url $(shell git remote))
@@ -107,6 +108,10 @@ simulated_olt: local-protos local-lib-go
 
 docker-push:
 	docker push ${SIMULATEDOLT_IMAGENAME}:${DOCKER_TAG}
+
+docker-kind-load:
+	@if [ "`kind get clusters | grep voltha-$(TYPE)`" = '' ]; then echo "no voltha-$(TYPE) cluster found" && exit 1; fi
+	kind load docker-image ${SIMULATEDOLT_IMAGENAME}:${DOCKER_TAG} --name=voltha-$(TYPE) --nodes $(shell kubectl get nodes --template='{{range .items}}{{.metadata.name}},{{end}}' | sed 's/,$$//')
 
 ## lint and unit tests
 
