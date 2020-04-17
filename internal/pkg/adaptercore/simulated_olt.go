@@ -19,25 +19,25 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	com "github.com/opencord/voltha-lib-go/v2/pkg/adapters/common"
-	"github.com/opencord/voltha-lib-go/v2/pkg/kafka"
-	"github.com/opencord/voltha-lib-go/v2/pkg/log"
-	ic "github.com/opencord/voltha-protos/v2/go/inter_container"
-	"github.com/opencord/voltha-protos/v2/go/openflow_13"
-	"github.com/opencord/voltha-protos/v2/go/voltha"
+	com "github.com/opencord/voltha-lib-go/v3/pkg/adapters/common"
+	"github.com/opencord/voltha-lib-go/v3/pkg/kafka"
+	"github.com/opencord/voltha-lib-go/v3/pkg/log"
+	ic "github.com/opencord/voltha-protos/v3/go/inter_container"
+	"github.com/opencord/voltha-protos/v3/go/openflow_13"
+	"github.com/opencord/voltha-protos/v3/go/voltha"
 	"sync"
 )
 
 type SimulatedOLT struct {
 	deviceHandlers        map[string]*DeviceHandler
 	coreProxy             *com.CoreProxy
-	kafkaICProxy          *kafka.InterContainerProxy
+	kafkaICProxy          kafka.InterContainerProxy
 	numOnus               int
 	exitChannel           chan int
 	lockDeviceHandlersMap sync.RWMutex
 }
 
-func NewSimulatedOLT(ctx context.Context, kafkaICProxy *kafka.InterContainerProxy, coreProxy *com.CoreProxy, onuNumber int) *SimulatedOLT {
+func NewSimulatedOLT(ctx context.Context, kafkaICProxy kafka.InterContainerProxy, coreProxy *com.CoreProxy, onuNumber int) *SimulatedOLT {
 	var simulatedOLT SimulatedOLT
 	simulatedOLT.exitChannel = make(chan int, 1)
 	simulatedOLT.deviceHandlers = make(map[string]*DeviceHandler)
@@ -271,14 +271,6 @@ func (so *SimulatedOLT) Receive_packet_out(deviceId string, egress_port_no int, 
 	return errors.New("UnImplemented")
 }
 
-func (so *SimulatedOLT) Suppress_alarm(filter *voltha.AlarmFilter) error {
-	return errors.New("UnImplemented")
-}
-
-func (so *SimulatedOLT) Unsuppress_alarm(filter *voltha.AlarmFilter) error {
-	return errors.New("UnImplemented")
-}
-
 func (so *SimulatedOLT) Download_image(device *voltha.Device, request *voltha.ImageDownload) (*voltha.ImageDownload, error) {
 	return nil, errors.New("UnImplemented")
 }
@@ -297,4 +289,28 @@ func (so *SimulatedOLT) Activate_image_update(device *voltha.Device, request *vo
 
 func (so *SimulatedOLT) Revert_image_update(device *voltha.Device, request *voltha.ImageDownload) (*voltha.ImageDownload, error) {
 	return nil, errors.New("UnImplemented")
+}
+
+func (oo *SimulatedOLT) Enable_port(deviceID string, port *voltha.Port) error {
+	return errors.New("UnImplemented")
+}
+
+func (oo *SimulatedOLT) Disable_port(deviceID string, port *voltha.Port) error {
+	return errors.New("UnImplemented")
+}
+
+func (oo *SimulatedOLT) Child_device_lost(deviceID string, pPortNo uint32, onuID uint32) error {
+	return errors.New("UnImplemented")
+}
+
+func (oo *SimulatedOLT) Start_omci_test(device *voltha.Device, request *voltha.OmciTestRequest) (*voltha.TestResponse, error) {
+	return nil, errors.New("UnImplemented")
+}
+
+func (oo *SimulatedOLT) Suppress_event(filter *voltha.EventFilter) error {
+	return errors.New("UnImplemented")
+}
+
+func (oo *SimulatedOLT) Unsuppress_event(filter *voltha.EventFilter) error {
+	return errors.New("UnImplemented")
 }
